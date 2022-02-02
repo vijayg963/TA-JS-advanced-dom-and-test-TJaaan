@@ -1,20 +1,32 @@
 const root = document.querySelector("main");
-// let strong = document.createElement("strong");
-// strong.innerText = `QuoteText:`;
+let noOfQuotes = 5;
+let index = 0;
 
 function createUI() {
-  quotes.forEach((elm) => {
-    let text = document.createElement("p");
-    text.innerText = `QuoteText: ${elm.quoteText}`;
-    let author = document.createElement("p");
-    author.innerText = `QuoteAuthor: ${elm.quoteAuthor}`;
+  for (let i = 0; i < noOfQuotes; i++) {
     let box = document.createElement("div");
+    let text = document.createElement("p");
+    let author = document.createElement("p");
+    author.classList.add("author");
+    text.innerText = `QuoteText: ${quotes[index].quoteText}`;
+    author.innerText = `QuoteAuthor: ${quotes[index].quoteAuthor}`;
     box.classList.add("col");
     box.append(text, author);
     root.append(box);
-  });
+    index++;
+  }
 }
 
-createUI(quotes);
+document.addEventListener("scroll", () => {
+  let top = document.documentElement.scrollTop;
+  let height = document.documentElement.clientHeight;
+  let scHeight = document.documentElement.scrollHeight;
+  if (top + height >= scHeight && index < quotes.length) {
+    createUI();
+  }
+});
 
-root.addEventListener(`scroll`);
+window.addEventListener("DOMContentLoaded", () => {
+  alert("DOM content is loaded");
+  createUI();
+});

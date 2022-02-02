@@ -18,5 +18,13 @@ strong {
 }
 
 p {
+  font-size: 1.2rem;
   color: lightgoldenrodyellow;
+  font-weight: 600;
+}
+
+.author {
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: 400;
 }
