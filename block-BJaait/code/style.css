@@ -147,12 +147,12 @@ input {
   background-color: transparent;
   border: 2px solid white;
   font-size: 1.2rem;
-  padding: 10px;
+  padding: 10px 2rem;
   color: white;
 }
 
 li {
-  width: 260px;
+  width: 300px;
   background-color: white;
   color: #2675f4;
   font-weight: bold;
@@ -165,4 +165,36 @@ ul li {
   text-align: center;
   margin: 0 auto;
   margin-top: 1rem;
+}
+
+.adder {
+  position: relative;
+  width: 250px;
+  margin: 0px auto;
+  display: block;
+}
+
+span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.8;
+  cursor: pointer;
+  transition: all 200ms;
+  color: white;
+  will-change: transform;
+}
+
+.draggable {
+  will-change: transform;
+  padding-left: 10px;
+  cursor: move;
+  transition: all 200ms;
+  position: relative;
+}
+
+.over {
+  transform: scale(1.1, 1.1);
 }
